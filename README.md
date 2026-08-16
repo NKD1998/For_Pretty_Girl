@@ -9,7 +9,8 @@ A small, four-screen interactive birthday site. Static — no build step, no ser
 ├── script.js
 ├── assets/
 │   ├── couple-photo.jpg      ← the finale photo
-│   └── couple-photo-2.jpg    ← the second photo (tap the frame to swap)
+│   ├── couple-photo-2.jpg    ← the second photo (tap the frame to swap)
+│   └── song.mp3              ← background music
 └── README.md
 ```
 
@@ -35,6 +36,14 @@ Portrait photos work best. The frame crops to a 4:5 box from the centre — if a
 ```css
 .plate img { object-position: 50% 41%; }   /* lower the % to show more of the top */
 ```
+
+## Music
+
+`assets/song.mp3` plays quietly in the background for the whole visit — no player, no buttons, nothing to fiddle with.
+
+Browsers don't let a page start audio on its own, so it begins the instant she taps anything (the "Tap here ✨" button), fades in, loops, and keeps going across all four screens until she closes the tab. If the file is missing, the site just runs silent.
+
+To change the track, replace `assets/song.mp3`. The current file is ~4.2 MB — trimming it to the first 60–90 seconds (it loops anyway) makes it much lighter on mobile data.
 
 ## Editing the words
 

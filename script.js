@@ -118,6 +118,36 @@
     wrap.appendChild(frag);
   }
 
+  /* ── background music (no controls, starts on her first tap) ── */
+
+  var audio = window.__bdaySong || (window.__bdaySong = new Audio('assets/song.mp3'));
+  var fade;
+
+  audio.loop = true;
+  audio.preload = 'auto';
+  audio.volume = 0;
+  audio.setAttribute('playsinline', '');
+
+  function fadeIn() {
+    clearInterval(fade);
+    fade = setInterval(function () {
+      audio.volume = Math.min(0.42, audio.volume + 0.025);
+      if (audio.volume >= 0.415) clearInterval(fade);
+    }, 55);
+  }
+
+  /* Browsers block audio until she interacts, so her first tap starts it. */
+  function startAudio() {
+    if (!audio.paused) return;
+    var p = audio.play();
+    if (p && p.then) { p.then(fadeIn).catch(function () {}); } else { fadeIn(); }
+  }
+
+  ['pointerdown', 'touchstart', 'click', 'keydown'].forEach(function (ev) {
+    document.addEventListener(ev, startAudio, { passive: true });
+  });
+  startAudio();
+
   /* ── start clean on refresh ─────────────────────────── */
   show(1);
 })();

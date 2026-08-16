@@ -90,7 +90,7 @@
   if (!reduce) {
     var wrap = document.getElementById('dust');
     var frag = document.createDocumentFragment();
-    for (var i = 0; i < 14; i++) {
+    for (var i = 0; i < 30; i++) {
       var d = document.createElement('i');
       var size = 2.5 + Math.random() * 4;
       d.style.left = (Math.random() * 100).toFixed(2) + '%';
@@ -104,7 +104,7 @@
     }
 
     var PETALS = ['🌸', '💜', '🌸', '🌸', '💜'];
-    for (var h = 0; h < 34; h++) {
+    for (var h = 0; h < 41; h++) {
       var e = document.createElement('b');
       e.textContent = PETALS[h % PETALS.length];
       e.style.left = (1 + Math.random() * 97).toFixed(2) + '%';
@@ -120,13 +120,11 @@
 
   /* ── background music (no controls, starts on her first tap) ── */
 
-  var audio = window.__bdaySong || (window.__bdaySong = new Audio('assets/song.mp3'));
+  var audio = document.getElementById('song');
   var fade;
 
   audio.loop = true;
-  audio.preload = 'auto';
   audio.volume = 0;
-  audio.setAttribute('playsinline', '');
 
   function fadeIn() {
     clearInterval(fade);
@@ -136,15 +134,19 @@
     }, 55);
   }
 
-  /* Browsers block audio until she interacts, so her first tap starts it. */
+  /* Browsers block audio until she interacts, so every tap retries until
+     one of them is allowed through. Silent no-op if the file is missing. */
   function startAudio() {
     if (!audio.paused) return;
     var p = audio.play();
     if (p && p.then) { p.then(fadeIn).catch(function () {}); } else { fadeIn(); }
   }
 
-  ['pointerdown', 'touchstart', 'click', 'keydown'].forEach(function (ev) {
+  ['pointerdown', 'touchstart', 'touchend', 'click', 'keydown'].forEach(function (ev) {
     document.addEventListener(ev, startAudio, { passive: true });
+  });
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) startAudio();
   });
   startAudio();
 

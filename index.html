@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F6F0E6">
+<title>Hey, you.</title>
+
+<!-- WhatsApp / link preview. Kept vague on purpose so the surprise isn't spoiled. -->
+<meta property="og:title" content="Hey, you.">
+<meta property="og:description" content="Before you scroll away — there's something I wanted you to see.">
+<meta property="og:type" content="website">
+<meta name="description" content="Before you scroll away — there's something I wanted you to see.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="atmosphere" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="dust" id="dust" aria-hidden="true"></div>
+
+<button type="button" class="back" id="back" aria-label="Go back" hidden>
+  <span class="arrow">←</span><span>back</span>
+</button>
+
+<main>
+
+  <!-- ── 01 ─────────────────────────────────────────── -->
+  <section class="screen is-active" id="s1" data-screen="1">
+    <div class="stack center">
+      <p class="eyebrow" style="--d:0s">for aalooo</p>
+      <h1 class="display" style="--d:.18s">Hey, you.</h1>
+      <div class="rule" style="--d:.7s"></div>
+      <p class="lede" style="--d:.42s">Before you scroll away — there's something I wanted you to see.</p>
+      <div class="gap-lg"></div>
+      <button type="button" class="cta" data-next="2" style="--d:.72s">Tap here ✨</button>
+      <p class="whisper" style="--d:1.5s">it's short, I promise</p>
+    </div>
+  </section>
+
+  <!-- ── 02 ─────────────────────────────────────────── -->
+  <section class="screen" id="s2" data-screen="2" hidden>
+    <span class="sparkle sp1">✦</span>
+    <span class="sparkle sp2">✦</span>
+    <span class="sparkle sp3">✦</span>
+    <span class="sparkle sp4">✦</span>
+    <div class="stack center">
+      <p class="eyebrow" style="--d:0s">so, first things first</p>
+      <h1 class="display display-sm" style="--d:.15s">Happy Birthday,</h1>
+      <h1 class="display display-name" style="--d:.38s">Aalooo ✨</h1>
+      <p class="lede lede-wide" style="--d:.62s">Today's your day. Which felt like a good excuse to make you something instead of just texting it.</p>
+      <p class="aside" style="--d:.82s">Yes, I made an entire website. No, I'm not explaining myself. 😄</p>
+      <div class="gap-lg"></div>
+      <button type="button" class="cta" data-next="3" style="--d:1s">There's more →</button>
+    </div>
+  </section>
+
+  <!-- ── 03 ─────────────────────────────────────────── -->
+  <section class="screen screen-scroll" id="s3" data-screen="3" hidden>
+    <div class="letter">
+      <p class="eyebrow" style="--d:0s">the actual message</p>
+      <div class="rule rule-left" style="--d:.3s"></div>
+
+      <p class="pull" style="--d:.16s">Some people just have a way of making an ordinary Monday feel like less of a Monday.</p>
+      <p class="pull pull-accent" style="--d:.3s">You're one of those people for me.</p>
+
+      <div class="body-copy" style="--d:.44s">
+        <p>I don't think I've ever said this properly out loud, so I'm saying it here, where you can't interrupt me halfway through.</p>
+        <p>Work is work. Things break, meetings run long, someone always replies-all. And then the day ends, and I know I'm going to see you, and somehow that's the part I've been looking forward to since about 11am.</p>
+        <p>I like that we have our own thing going. That the office has absolutely no idea. That we can sit somewhere with chai, you taking it far more seriously than any human being reasonably should, and lose two hours without noticing.</p>
+        <p>And the Kandivali drops. Long, completely unnecessary, and still my favourite part of the week.</p>
+      </div>
+
+      <div class="list-card" style="--d:.58s">
+        <p class="eyebrow eyebrow-sm">a short, incomplete list</p>
+        <div class="list">
+          <div class="list-row"><span class="num">01</span><span>How seriously you take your chai. It's a whole personality and I respect it.</span></div>
+          <div class="list-row"><span class="num">02</span><span>That you say what you actually think, even when it would be easier not to.</span></div>
+          <div class="list-row"><span class="num">03</span><span>How easy it is to talk to you about absolutely nothing for an hour.</span></div>
+          <div class="list-row"><span class="num">04</span><span>That you never make anyone feel like they're being too much.</span></div>
+        </div>
+      </div>
+
+      <div class="body-copy body-copy-tail" style="--d:.68s">
+        <p>You've quietly made a very regular year better just by being around, and I don't think you fully realise that.</p>
+        <p>Anyway. Enough of me being sentimental 😄</p>
+        <p>I just wanted you to know that you're genuinely special to me. I hope this year is kind to you, and that it gives you a hundred small reasons to smile — and slightly better chai.</p>
+      </div>
+
+      <div class="wish" style="--d:.8s">
+        <p class="wish-head">Happy Birthday, Aalooo!</p>
+        <p class="wish-body">You deserve all the happiness, love and beautiful things life has to offer. Keep smiling, keep shining and just know that I'll always be there for you. 🌸💜</p>
+      </div>
+      <p class="signoff-name" style="--d:.88s">— Laddooo</p>
+
+      <button type="button" class="cta cta-center" data-next="4" style="--d:.96s">One last thing…</button>
+    </div>
+  </section>
+
+  <!-- ── 04 ─────────────────────────────────────────── -->
+  <section class="screen" id="s4" data-screen="4" hidden>
+    <div class="stack center" id="preReveal">
+      <h2 class="display display-xs" style="--d:0s">Okay… one last thing.</h2>
+      <p class="lede lede-tight" style="--d:.25s">You already know which one.</p>
+      <div class="orbit" style="--d:.5s">
+        <span class="ring"></span>
+        <span class="ring ring-2"></span>
+        <button type="button" class="orb" id="revealBtn">Tap here</button>
+      </div>
+    </div>
+
+    <div class="stack center" id="postReveal" hidden>
+      <div class="frame" id="frame" role="button" tabindex="0" aria-label="Tap to see the other photo">
+        <div class="plate">
+          <img id="photo" src="assets/couple-photo.jpg" alt="The two of us" loading="lazy" decoding="async">
+          <span class="vignette"></span>
+        </div>
+        <div class="frame-hint"><span>tap the photo</span><span class="rot">↺</span></div>
+      </div>
+      <p class="caption" style="--d:.55s">One of my favourite pictures of us. 🤍</p>
+      <p class="lede lede-tight" style="--d:.72s">Here's to more evenings that run late for no good reason at all.</p>
+      <div class="rule" style="--d:.9s"></div>
+      <p class="whisper whisper-late" style="--d:1.2s">Made with a little too much thought. 🤍</p>
+      <button type="button" class="restart" id="restart" style="--d:1.4s">start over</button>
+    </div>
+  </section>
+
+</main>
+
+<div class="veil" id="veil" aria-hidden="true"></div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
